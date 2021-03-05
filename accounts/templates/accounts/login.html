@@ -1,0 +1,39 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social App - Login</title>
+    <style>
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            width: 15%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .facebook {
+            background-color: blue;
+        }
+
+        .google {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Social App Login Page</h1>
+    
+    <a class="facebook" href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook Login With OAuth2</a>
+    
+    <a class="facebook" href="{% provider_login_url 'facebook' method='js_sdk' %}">Facebook Login With JS SDK</a>
+    
+    <a class="google" href="{% provider_login_url 'google' %}">Google Login</a>
+</body>
+</html>
